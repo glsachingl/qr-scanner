@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+
+        <label for="email">description:</label>
+        <input type="text" id="description" formControlName="description">
+
+        <label for="email">category:</label>
+        <input type="text" id="category" formControlName="category">
+
+
+        <label for="UploadimgControlInput" class="form-label">Upload File/Image</label>
+        <input type="file" class="form-control" id="UploadimgControlInput" formControlName="image" name="image"
+            (change)="uploadImage($event)" placeholder="Upload Image">
+
+        <button type="submit"> Submit</button>
+    </form>
+</body>
+
+</html>
