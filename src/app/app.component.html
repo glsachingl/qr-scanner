@@ -1,10 +1,8 @@
 <mat-toolbar color="primary" class="navbar">
-  <div>
-    <span><a mat-button routerLink="">My Application</a></span>
-  </div>
-  <div><a routerLink="addproduct" mat-raised-button color="accent">Add Product</a>
-    <a routerLink="scanproduct" mat-raised-button color="accent">Scan QR</a>
-    <a routerLink="product/1" mat-raised-button color="accent">Product</a>
-  </div>
+  <mat-toolbar-row>
+    <a mat-button routerLink="">
+      <h1 class="mat-typography">QR SCANNER</h1>
+    </a>
+  </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

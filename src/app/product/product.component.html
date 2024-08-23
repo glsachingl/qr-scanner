@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,6 +10,12 @@
 <body>
     <div class="container">
         <div class="row">
+            <div class="col-6">
+                <div class="row"> <img class="img-fluid" [src]="imgSrc" />
+                </div>
+                <div class="row"> <img class="img-fluid" [src]="qrSrc" />
+                </div>
+            </div>
             <div class="col">
                 <div class="row">
                     <div class="col"> Product Name</div>
@@ -24,14 +30,21 @@
                     <div class="col">{{product?.description}}</div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="row"> <img class="img-fluid" [src]="imgSrc" />
-                </div>
-                <div class="row"> <img class="img-fluid" [src]="qrSrc" />
-                </div>
-            </div>
         </div>
     </div>
 </body>
 
-</html>
+</html> -->
+
+<main class="container">
+    <div class="left-column">
+        <img class="img-fluid" [src]="imgSrc" />
+    </div>
+    <div class="right-column">
+        <div class="product">
+            <span>{{product?.category}}</span>
+            <h1>{{product?.name}}</h1>
+            <p>{{product?.description}}</p>
+        </div>
+    </div>
+</main>

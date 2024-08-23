@@ -24,7 +24,7 @@ export class ProductComponent implements OnInit {
     let id = this.activatedRoute.snapshot.paramMap.get("id") || '';
 
     this.productservice.getProduct(id).subscribe(
-      (response) => { this.product = response; this.imgSrc = "http://192.168.29.15:8080/product/getProductImage?id=" + this.product?.id; this.qrSrc = "http://192.168.29.15:8080/product/getQrCode?id=" + this.product?.id },
+      (response) => { this.product = response; this.imgSrc = "http://localhost:8080/product/getProductImage?id=" + this.product?.id; this.qrSrc = "http://localhost:8080/product/getQrCode?id=" + this.product?.id },
       (error) => { console.log(error); })
       ;
 
