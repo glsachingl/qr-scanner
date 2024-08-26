@@ -23,6 +23,7 @@
     "@angular/platform-server": "^18.0.0",
     "@angular/router": "^18.0.0",
     "@angular/ssr": "^18.0.7",
+    "@nativescript/core": "^8.8.2",
     "@zxing/browser": "^0.1.5",
     "@zxing/library": "^0.21.2",
     "@zxing/ngx-scanner": "^18.0.1",

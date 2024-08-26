@@ -1,16 +1,27 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, inject, OnChanges, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
+import { QrComponent } from '../qr/qr.component';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
 export class ProductComponent implements OnInit {
+
 
 
   product!: Product | null;
@@ -28,6 +39,15 @@ export class ProductComponent implements OnInit {
       (error) => { console.log(error); })
       ;
 
+  }
+
+
+  dialog = inject(MatDialog);
+
+  openDialog() {
+    this.dialog.open(QrComponent, {
+      data: this.qrSrc,
+    },);
   }
 
 

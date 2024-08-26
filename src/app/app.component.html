@@ -1,8 +1,16 @@
 <mat-toolbar color="primary" class="navbar">
   <mat-toolbar-row>
-    <a mat-button routerLink="">
+    <a mat-button routerLink="/home">
       <h1 class="mat-typography">QR SCANNER</h1>
     </a>
+    <span class="example-spacer"></span>
+    <a *ngIf="!router.url.includes('login') && !router.url.includes('home') && !router.url.includes('addproduct') "
+      mat-button routerLink="/addproduct">Add
+      Product</a>
+    <a *ngIf="!router.url.includes('login') && !router.url.includes('home') && !router.url.includes('scanproduct') "
+      mat-button routerLink="/scanproduct">Scan
+      Product</a>
+    <a *ngIf="!router.url.includes('login')" mat-button (click)="onLogout()">Logout</a>
   </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>

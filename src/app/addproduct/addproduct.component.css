@@ -1,8 +1,27 @@
-.container {
-    justify-content: center;
-    align-items: center;
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.full-width {
-    width: 100%;
+body {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+input::file-selector-button {
+    background-position-x: 0%;
+    background-size: 200%;
+    border: 0;
+    border-radius: 8px;
+    color: #005cbb;
+    padding: 1rem 1.25rem;
+    transition: all 0.25s;
+}
+
+input::file-selector-button:hover {
+    background-position-x: 100%;
+    transform: scale(1.1);
 }

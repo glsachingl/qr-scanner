@@ -17,14 +17,12 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProduct(id: string): Observable<Product> {
-    return this.http.get<Product>(this.urlGet + id);
+    return this.http.get<Product>(this.urlGet + id, { headers: { authorization: sessionStorage.getItem('authenticatedUser')! } });
   }
 
   addProduct(productFormData: FormData): Observable<string> {
-
-    console.log(productFormData.get('file'));
-
-    return this.http.post<string>(this.urlPost, productFormData);
+    return this.http.post<string>(this.urlPost, productFormData, { headers: { authorization: sessionStorage.getItem('authenticatedUser')! } });
   }
+
 
 }

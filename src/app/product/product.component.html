@@ -1,50 +1,14 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <div class="row"> <img class="img-fluid" [src]="imgSrc" />
-                </div>
-                <div class="row"> <img class="img-fluid" [src]="qrSrc" />
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col"> Product Name</div>
-                    <div class="col">{{product?.name}}</div>
-                </div>
-                <div class="row">
-                    <div class="col"> Product Category</div>
-                    <div class="col">{{product?.category}}</div>
-                </div>
-                <div class="row">
-                    <div class="col"> Product Description</div>
-                    <div class="col">{{product?.description}}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html> -->
-
 <main class="container">
     <div class="left-column">
         <img class="img-fluid" [src]="imgSrc" />
     </div>
+
     <div class="right-column">
         <div class="product">
             <span>{{product?.category}}</span>
             <h1>{{product?.name}}</h1>
             <p>{{product?.description}}</p>
         </div>
+        <a (click)="openDialog()"><img class="img" src="qr.jpg"></a>
     </div>
 </main>

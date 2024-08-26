@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
+import { AuthenticationService } from './authentication.service';
 
 
 @Component({
@@ -15,14 +16,18 @@ import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 })
 export class AppComponent {
 
+  _router!: Router;
 
-  qrResultString!: string;
+  constructor(public router: Router,
+    private authenticationService: AuthenticationService) {
 
-  clearResult(): void {
-    this.qrResultString = "";
+    this._router = router
   }
 
-  onCodeResult(resultString: string) {
-    this.qrResultString = resultString;
+  onLogout() {
+    this.authenticationService.logout();
+    this.router.navigateByUrl('/login')
   }
+
+
 }

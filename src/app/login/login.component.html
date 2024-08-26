@@ -1,0 +1,26 @@
+<div class="center">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="container">
+            <div class="row">
+                <div style="justify-content: center " class="alert alert-warning" *ngIf='invalidLogin'>
+                    {{errorMessage}}</div>
+                <mat-form-field appearance="outline" [style.width.px]=356>
+                    <mat-label>User Name</mat-label>
+                    <input formControlName="username" matInput>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" formControlName="password" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <div class="col mx-1">
+                    <button mat-flat-button type="submit">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

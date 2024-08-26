@@ -14,7 +14,6 @@ body {
     display: flex;
 }
 
-/* Columns */
 .left-column {
     width: 65%;
     position: relative;
@@ -27,7 +26,6 @@ body {
 
 .left-column img {
     width: 100%;
-    position: absolute;
     left: 0;
     top: 0;
     opacity: 1;
@@ -59,4 +57,9 @@ body {
     font-weight: 300;
     color: #86939E;
     line-height: 24px;
+}
+
+.img {
+    width: 1cm;
+    height: 1cm;
 }

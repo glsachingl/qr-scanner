@@ -1,40 +1,41 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-    <div class="container pt-3">
-        <div class="row">
-            <div class="col-2 mx-auto ">
-                <mat-form-field class="full-width" appearance="outline">
+<div class="center">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="row">
+                <mat-form-field appearance="outline">
                     <mat-label>Product Name</mat-label>
                     <input formControlName="name" matInput>
                 </mat-form-field>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-2 mx-auto">
-                <mat-form-field class="full-width" appearance="outline">
+
+            <div class="row">
+
+                <mat-form-field appearance="outline">
                     <mat-label>Description</mat-label>
                     <input formControlName="description" matInput>
                 </mat-form-field>
+
             </div>
-        </div>
-        <div class="row">
-            <div class="col-2 mx-auto">
-                <mat-form-field class="full-width" appearance="outline">
+            <div class="row">
+
+                <mat-form-field appearance="outline">
                     <mat-label>Category</mat-label>
                     <input formControlName="category" matInput>
                 </mat-form-field>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-2 mx-auto">
-                <input mat-input type="file" class="form-control" id="UploadimgControlInput" formControlName="image"
-                    name="image" (change)="uploadImage($event)" placeholder="Upload Image">
-            </div>
-        </div>
-        <div class="row">
-            <div class="pt-3 col-2 mx-auto">
-                <button mat-flat-button type="submit">Submit</button>
-            </div>
-        </div>
 
-    </div>
-</form>
+            </div>
+            <div class="row">
+                <div class="Upload">
+                    <input mat-input type="file" class="form-control" id="UploadimgControlInput" formControlName="image"
+                        name="image" (change)="uploadImage($event)" placeholder="Upload Image">
+                </div>
+
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col mx-3">
+                <button mat-flat-button type="submit">Add Product</button>
+            </div>
+        </div>
+    </form>
+</div>
